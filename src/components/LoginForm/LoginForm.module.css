@@ -1,0 +1,51 @@
+@media only screen and (min-width: 375px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1280px) {
+  .inputEmail {
+    margin-bottom: 14px;
+  }
+
+  .inputForm {
+    border: 1px solid rgba(29, 30, 33, 0.1);
+    border-radius: 60px;
+    width: 323px;
+    height: 44px;
+    padding: 13px 18px;
+    background-color: var(--background-3);
+    outline: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: rgba(29, 30, 33, 0.4);
+  }
+
+  .inputPassword {
+    margin-bottom: 40px;
+  }
+
+  .errorMessage {
+    padding: 2px 18px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: rgba(29, 30, 33, 0.4);
+  }
+
+  .btnForm {
+    border-radius: 60px;
+    padding: 13px 141px;
+    width: 323px;
+    height: 44px;
+    background-color: var(--accent);
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    color: var(--background-3);
+    -webkit-tap-highlight-color: transparent;
+  }
+}

@@ -1,0 +1,69 @@
+.sectionNotFound {
+  padding: 32px;
+}
+
+.wrapper {
+  border-radius: 60px;
+  width: 100%;
+  height: 654px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 300px;
+  line-height: 100%;
+  color: var(--bg-secondary-color);
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgWrapper {
+  border-radius: 1000px;
+  width: 299px;
+  height: 300git px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgWrapper img {
+  width: 299px;
+  height: 300px;
+  border-radius: 1000px;
+  object-fit: cover;
+}
+
+.text {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 117%;
+  letter-spacing: -0.03em;
+  color: var(--bg-secondary-color);
+  margin-bottom: 20px;
+}
+
+.link {
+  border-radius: 30px;
+  padding: 14px 30px;
+  width: 162px;
+  height: 48px;
+  background-color: var(--secondary-color);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.03em;
+  color: var(--primary-color);
+  white-space: nowrap;
+  text-decoration: none;
+}

@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/es/storage';
+import { authReducer } from './auth/authSlice';
 
 import {
   persistStore,
@@ -12,19 +13,19 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-const persistAuth = {
+const persistConfigAuth = {
   key: 'auth',
   version: 1,
   storage,
   whitelist: ['token'],
 };
 
+const persistedAuthReducer = persistReducer(persistConfigAuth, authReducer);
+
 export const store = configureStore({
-  reducer: (state = {}) => state, // тимчасовий ред’юсер
-  /*  reducer: {
-    newsList: persistReducer(persistConfigNews, newsReducer),
-     auth: persistReducer(persistAuth, authReducer),
-  }, */
+  reducer: {
+    auth: persistedAuthReducer,
+  },
 
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

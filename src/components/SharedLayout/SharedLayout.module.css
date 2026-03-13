@@ -1,0 +1,14 @@
+.layout {
+}
+
+@media only screen and (min-width: 375px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1280px) {
+  .main {
+    padding: 20px 40px 40px;
+  }
+}

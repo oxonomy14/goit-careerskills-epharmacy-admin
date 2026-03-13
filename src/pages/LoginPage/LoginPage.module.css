@@ -1,0 +1,80 @@
+.sectionLoginPage {
+  height: 100vh;
+  position: relative;
+}
+
+@media only screen and (min-width: 375px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1280px) {
+  .sectionLoginPage {
+    padding-top: 28px;
+    padding-left: 100px;
+    padding-right: 253px;
+    padding-bottom: 262px;
+  }
+
+  .logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .logoImage {
+    width: 44px;
+    height: 44px;
+  }
+
+  .logoTitle {
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.03em;
+    color: var(--main-black);
+  }
+
+  .Container {
+    padding-top: 226px;
+    display: flex;
+    gap: 150px;
+  }
+
+  .textWrapper {
+    width: 614px;
+    height: 240px;
+    position: relative;
+  }
+  .imagePill {
+    position: absolute;
+    right: 0;
+    transform: translateY(-57%);
+    width: 179px;
+    height: 175px;
+  }
+
+  .text {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 111%;
+    color: var(--main-black);
+  }
+
+  .text span {
+    color: var(--accent);
+  }
+
+  .decorateWrapper {
+    position: absolute;
+    right: -185px;
+
+    bottom: -88px;
+  }
+
+  .decorateIcon {
+    width: 464px;
+    height: 345px;
+    fill: rgba(89, 177, 122, 0.08);
+  }
+}

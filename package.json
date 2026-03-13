@@ -11,14 +11,20 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@hookform/resolvers": "^5.2.2",
     "@reduxjs/toolkit": "^2.11.2",
+    "axios": "^1.13.6",
     "plugin-react-swc": "^0.0.1-security",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-hook-form": "^7.71.2",
     "react-hot-toast": "^2.6.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.13.1",
-    "redux-persist": "^6.0.0"
+    "react-spinners": "^0.17.0",
+    "redux-persist": "^6.0.0",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
