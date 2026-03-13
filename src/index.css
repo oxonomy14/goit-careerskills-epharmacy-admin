@@ -1,0 +1,54 @@
+:root {
+  --font-family: 'Manrope', sans-serif;
+  --bg-main-color: #f9f9f9;
+  --bg-secondary-color: #fff;
+  --text-strong: #262626;
+  --text-normal: rgba(25, 26, 21, 0.5);
+  --text-muted: #8a8a89;
+  --primary-color: #f6b83d;
+  --secondary-color: #fff4df;
+  --white-color: #fff;
+  --icon-color-white: #fff;
+  --icon-color-orange: #f6b83d;
+  --icon-color-black: #262626;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  overflow-x: hidden;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
