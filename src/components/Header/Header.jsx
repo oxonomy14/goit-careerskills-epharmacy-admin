@@ -1,5 +1,9 @@
 import css from './Header.module.css';
 import { useLocation } from 'react-router-dom';
+import Title from '../Title/Title';
+import SubTitle from '../SubTitle/SubTitle';
+import Logo from '../Logo/Logo';
+import LogOutBtn from '../LogOutBtn/LogOutBtn';
 
 const Header = () => {
   const location = useLocation();
@@ -17,24 +21,20 @@ const Header = () => {
   return (
     <>
       <div className={css.container}>
-        <div className={css.logo}>
-          <img className={css.logoImg} src="/img/logo.png" alt="image logo" />
-        </div>
+        <Logo />
         <div className={css.titleWrapper}>
-          <div className={css.title}>Medicine store</div>
+          <Title>Medicine store</Title>
+
           <div className={css.meta}>
-            <div className={css.text}>{currentTitle}</div>
+            <SubTitle>{currentTitle}</SubTitle>
+
             <svg className={css.vLineIcon}>
               <use href={`/icons/sprite.svg?v=${Date.now()}#icon-vline`} />
             </svg>
-            <div className={css.text}>vendor@gmail.com</div>
+            <SubTitle>vendor@gmail.com</SubTitle>
           </div>
         </div>
-        <button type="button" className={css.logOut}>
-          <svg className={css.logoutIcon}>
-            <use href={`/icons/sprite.svg?v=${Date.now()}#icon-logout`} />
-          </svg>
-        </button>
+        <LogOutBtn />
       </div>
     </>
   );

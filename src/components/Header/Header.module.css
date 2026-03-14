@@ -16,27 +16,11 @@
     border-bottom: 1px solid rgba(29, 30, 33, 0.1);
   }
 
-  .logo {
-  }
-
-  .logoImg {
-    width: 40px;
-    height: 40px;
-  }
-
   .titleWrapper {
     margin-left: 60px;
     margin-right: auto;
     display: flex;
     flex-direction: column;
-  }
-
-  .title {
-    margin-bottom: 4px;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 117%;
-    color: var(--main-black);
   }
 
   .meta {
@@ -46,33 +30,9 @@
     align-items: center;
   }
 
-  .text {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 150%;
-    color: rgba(29, 30, 33, 0.4);
-  }
-
   .vLineIcon {
     stroke: rgba(29, 30, 33, 0.4);
     width: 1px;
     height: 12px;
-  }
-
-  .logOut {
-    border-radius: 100%;
-    background-color: var(--accent);
-    box-shadow: 0 -1px 7px 0 rgba(71, 71, 71, 0.05);
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .logoutIcon {
-    width: 13px;
-    height: 14px;
-    fill: var(--background-3);
   }
 }
