@@ -4,10 +4,13 @@ import Title from '../Title/Title';
 import SubTitle from '../SubTitle/SubTitle';
 import Logo from '../Logo/Logo';
 import LogOutBtn from '../LogOutBtn/LogOutBtn';
+import { selectUser } from '../../redux/auth/authSelector.js';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const location = useLocation();
   const path = location.pathname;
+  const user = useSelector(selectUser);
 
   const pageTitles = {
     '/dashboard': 'Dashboard',
@@ -17,6 +20,8 @@ const Header = () => {
   };
 
   const currentTitle = pageTitles[location.pathname] || 'Undefind';
+
+  console.log('user:', user);
 
   return (
     <>
@@ -31,7 +36,7 @@ const Header = () => {
             <svg className={css.vLineIcon}>
               <use href={`/icons/sprite.svg?v=${Date.now()}#icon-vline`} />
             </svg>
-            <SubTitle>vendor@gmail.com</SubTitle>
+            <SubTitle>{user.email}</SubTitle>
           </div>
         </div>
         <LogOutBtn />
