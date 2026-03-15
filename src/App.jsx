@@ -16,7 +16,12 @@ import { refreshUser } from './redux/auth/authOperations';
 
 const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
-const DashboardPage = lazy(() => import('./pages/DashboardPage/DashboardPage'));
+const DashboardPage = lazy(
+  () => import('./pages/DashboardPage/DashboardPage.jsx'),
+);
+const CustomersDataPage = lazy(
+  () => import('./pages/CustomersDataPage/CustomersDataPage'),
+);
 
 function App() {
   const dispatch = useDispatch();
@@ -49,6 +54,14 @@ function App() {
             element={
               <PrivateRoute>
                 <DashboardPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/customers"
+            element={
+              <PrivateRoute>
+                <CustomersDataPage />
               </PrivateRoute>
             }
           />
