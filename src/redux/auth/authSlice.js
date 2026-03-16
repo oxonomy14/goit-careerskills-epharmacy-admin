@@ -60,7 +60,6 @@ export const authSlice = createSlice({
         state.user = null;
         state.token = null;
         state.isLoggedIn = false;
-        localStorage.removeItem('token');
       })
       .addCase(logoutUser.rejected, state => {
         state.isLoading = false;

@@ -1,3 +1,5 @@
+// src/PrivateRoute
+
 import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
@@ -5,13 +7,16 @@ import {
   selectIsLoading,
   selectIsRefreshing,
 } from '../../redux/auth/authSelector';
+import Loader from '../Loader/Loader';
 
 const PrivateRoute = ({ children }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const isRefreshing = useSelector(selectIsRefreshing);
 
+  console.log('PrivateRoute:', isLoggedIn);
+
   if (isRefreshing) {
-    return null; // або Loader
+    return <Loader />;
   }
 
   return isLoggedIn ? children : <Navigate to="/" />;

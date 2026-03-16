@@ -14,8 +14,6 @@ export const loginUser = createAsyncThunk(
 
       setAuthHeader(token);
 
-      localStorage.setItem('token', token);
-
       return { token, user };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
@@ -27,15 +25,24 @@ export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
     try {
-      const { data } = await api.post('/user/refresh');
+      const state = thunkAPI.getState();
+      const token = state.auth.token;
 
-      const token = data.data.accessToken;
-      const user = data.data.user;
+      if (!token) {
+        return thunkAPI.rejectWithValue('No token');
+      }
 
       setAuthHeader(token);
 
+      const { data } = await api.post('/user/refresh');
+
+      const newToken = data.data.accessToken;
+      const user = data.data.user;
+
+      setAuthHeader(newToken);
+
       return {
-        token,
+        token: newToken,
         user,
       };
     } catch (error) {
@@ -50,11 +57,12 @@ export const logoutUser = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       await api.post('/user/logout');
-
-      clearAuthHeader();
-      localStorage.removeItem('token');
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data.message);
+      return thunkAPI.rejectWithValue(error.response?.data?.message);
     }
+
+    clearAuthHeader();
+
+    return true;
   },
 );

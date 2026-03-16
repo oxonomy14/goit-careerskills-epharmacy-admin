@@ -27,7 +27,7 @@ const SideBarMenu = () => {
             </svg>
           )}
         </NavLink>
-        <NavLink className={css.navBox} to="/customers">
+        <NavLink className={css.navBox} to="/suppliers">
           {({ isActive }) => (
             <svg className={clsx(css.navIcon, isActive && css.navIconActive)}>
               <use
@@ -36,7 +36,7 @@ const SideBarMenu = () => {
             </svg>
           )}
         </NavLink>
-        <NavLink className={css.navBox} to="/suppliers">
+        <NavLink className={css.navBox} to="/customers">
           {({ isActive }) => (
             <svg className={clsx(css.navIcon, isActive && css.navIconActive)}>
               <use href={`/icons/sprite.svg?v=${Date.now()}#icon-users`} />

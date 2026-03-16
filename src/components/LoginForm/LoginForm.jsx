@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { loginSchema } from '../../validation/loginSchema';
 import { useDispatch } from 'react-redux';
-import { login } from '../../redux/auth/authOperations';
+import { loginUser } from '../../redux/auth/authOperations';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useSelector } from 'react-redux';
@@ -15,7 +15,7 @@ const LoginForm = () => {
 
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  console.log('isLoggedIn:', isLoggedIn);
+  //console.log('isLoggedIn:', isLoggedIn);
 
   const {
     register,
@@ -27,7 +27,7 @@ const LoginForm = () => {
 
   const onSubmit = async data => {
     try {
-      const result = await dispatch(login(data)).unwrap();
+      const result = await dispatch(loginUser(data)).unwrap();
 
       if (result.token) {
         toast.success('Successfully logged in!');
