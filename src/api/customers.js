@@ -10,8 +10,20 @@ import { api } from './api'; // твій axios instance
   return data.data;
 }; */
 
-export const fetchCustomers = async ({ page = 1 }) => {
-  const { data } = await api.get(`/customers?page=${page}`);
+/* export const fetchCustomers = async ({ page = 1, name = '' }) => {
+  const { data } = await api.get(`/customers?name=${name}&page=${page}`);
+  return data.data;
+}; */
+
+export const fetchCustomers = async ({ page = 1, name = '' }) => {
+  const { data } = await api.get('/customers', {
+    params: {
+      page,
+      perPage: 8,
+      name,
+    },
+  });
+
   return data.data;
 };
 

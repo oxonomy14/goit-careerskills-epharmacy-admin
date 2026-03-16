@@ -1,3 +1,78 @@
-.container {
+@media only screen and (min-width: 375px) {
+}
 
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1440px) {
+  .filterWrapper {
+    display: flex;
+    gap: 14px;
+  }
+
+  .inputWrapper {
+    position: relative;
+  }
+
+  .input {
+    border: 1px solid rgba(29, 30, 33, 0.1);
+    border-radius: 60px;
+    width: 224px;
+    height: 44px;
+    box-shadow: 0 -1px 5px 0 rgba(71, 71, 71, 0.05);
+    background-color: var(--background-3);
+    padding: 13px 18px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: rgba(29, 30, 33, 0.4);
+    outline: none;
+  }
+
+  .btnClear {
+    position: absolute;
+    right: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iconX {
+    stroke: var(--accent-2);
+    fill: none;
+    width: 13px;
+    height: 13px;
+  }
+
+  .button {
+    border-radius: 60px;
+    padding: 13px 30px;
+    width: 116px;
+    height: 44px;
+    background: var(--accent);
+    display: flex;
+    gap: 9.17px;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .button p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    color: var(--background-3);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .filterIcon {
+    width: 14px;
+    height: 14px;
+    stroke: var(--background-3);
+    fill: none;
+  }
 }

@@ -12,11 +12,22 @@ const initialState = {
   hasPreviousPage: false,
   isLoading: false,
   error: null,
+  filter: '',
 };
 
 const customersSlice = createSlice({
   name: 'customers',
   initialState,
+
+  reducers: {
+    setFilter(state, action) {
+      state.filter = action.payload;
+    },
+
+    setPage(state, action) {
+      state.page = action.payload;
+    },
+  },
 
   extraReducers: builder => {
     builder
@@ -54,5 +65,7 @@ const customersSlice = createSlice({
       });
   },
 });
+
+export const { setFilter, setPage } = customersSlice.actions;
 
 export const customersReducer = customersSlice.reducer;

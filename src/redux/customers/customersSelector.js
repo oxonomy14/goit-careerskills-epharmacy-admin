@@ -16,3 +16,5 @@ export const selectTotalItems = state => state.customers.totalItems;
 export const selectHasNextPage = state => state.customers.hasNextPage;
 
 export const selectHasPreviousPage = state => state.customers.hasPreviousPage;
+
+export const selectFilter = state => state.customers.filter;

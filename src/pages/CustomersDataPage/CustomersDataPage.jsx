@@ -6,31 +6,62 @@ import { getCustomers } from '../../redux/customers/customersOperations';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { selectCustomers } from '../../redux/customers/customersSelector';
-import { selectPage } from '../../redux/customers/customersSelector';
+import {
+  selectCustomers,
+  selectPage,
+  selectFilter,
+} from '../../redux/customers/customersSelector';
+import { useState } from 'react';
+import { setFilter } from '../../redux/customers/customersSlice';
 
 const CustomersDataPage = () => {
   const dispatch = useDispatch();
   const customers = useSelector(selectCustomers);
   const currentPage = useSelector(selectPage);
+  const filter = useSelector(selectFilter);
 
   const handlePageChange = page => {
-    dispatch(getCustomers({ page }));
+    dispatch(getCustomers({ page, name: filter }));
+  };
+
+  const handleFilter = name => {
+    dispatch(setFilter(name));
+
+    dispatch(
+      getCustomers({
+        page: 1,
+        name,
+      }),
+    );
+  };
+
+  const handleClear = () => {
+    dispatch(setFilter(''));
+
+    dispatch(
+      getCustomers({
+        page: 1,
+        name: '',
+      }),
+    );
   };
 
   useEffect(() => {
-    dispatch(getCustomers({ page: currentPage }));
-  }, [dispatch, currentPage]);
+    dispatch(getCustomers({ page: currentPage, name: filter }));
+  }, [dispatch, currentPage, filter]);
+
   return (
     <>
-      <div>
-        <UserNameFilter />
-      </div>
-      <div className={css.customersData}>
-        <CustomersData customers={customers} />
-      </div>
-      <div className={css.pagination}>
-        <Pagination onPageChange={handlePageChange} />
+      <div className={css.wrapper}>
+        <div className={css.userNameFilter}>
+          <UserNameFilter onFilter={handleFilter} onClear={handleClear} />
+        </div>
+        <div className={css.customersData}>
+          <CustomersData customers={customers} />
+        </div>
+        <div className={css.pagination}>
+          <Pagination onPageChange={handlePageChange} />
+        </div>
       </div>
     </>
   );

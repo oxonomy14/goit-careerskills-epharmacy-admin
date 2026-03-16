@@ -3,9 +3,9 @@ import { fetchCustomers, fetchCustomerById } from '../../api/customers';
 
 export const getCustomers = createAsyncThunk(
   'customers/getAll',
-  async ({ page = 1 }, thunkAPI) => {
+  async ({ page = 1, name = '' }, thunkAPI) => {
     try {
-      return await fetchCustomers({ page });
+      return await fetchCustomers({ page, name });
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

@@ -28,18 +28,20 @@ const DashboardPage = () => {
 
   return (
     <>
-      <div className={css.statWrapper}>
-        <Statistics statistics={statistics} />
-      </div>
       <div className={css.wrapper}>
-        <div className={css.rcWrapper}>
-          <RecentCustomers
-            lastCustomers={lastCustomers}
-            customers={customers}
-          />
+        <div className={css.statWrapper}>
+          <Statistics statistics={statistics} />
         </div>
-        <div className={css.ieWrapper}>
-          <IncomeExpenses transactions={transactions} />
+        <div className={css.wrapperTable}>
+          <div className={css.rcWrapper}>
+            <RecentCustomers
+              lastCustomers={lastCustomers}
+              customers={customers}
+            />
+          </div>
+          <div className={css.ieWrapper}>
+            <IncomeExpenses transactions={transactions} />
+          </div>
         </div>
       </div>
     </>

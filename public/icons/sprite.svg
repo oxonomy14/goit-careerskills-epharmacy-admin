@@ -36,5 +36,11 @@
 <symbol id="icon-customers" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M28 26.667c0-2.323-2.227-4.297-5.333-5.031M20 26.667c0-2.947-3.581-5.333-8-5.333s-8 2.387-8 5.333M20 17.333c1.415 0 2.771-0.562 3.771-1.562s1.562-2.357 1.562-3.771c0-1.415-0.562-2.771-1.562-3.771s-2.357-1.562-3.771-1.562M12 17.333c-1.415 0-2.771-0.562-3.771-1.562s-1.562-2.357-1.562-3.771c0-1.415 0.562-2.771 1.562-3.771s2.357-1.562 3.771-1.562c1.414 0 2.771 0.562 3.771 1.562s1.562 2.357 1.562 3.771-0.562 2.771-1.562 3.771c-1 1-2.357 1.562-3.771 1.562z"></path>
 </symbol>
+<symbol id="icon-filter" viewBox="0 0 37 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M33.111 2h-31.111l12.444 14.716v10.173l6.222 3.111v-13.284l12.445-14.716z"></path>
+</symbol>
+<symbol id="icon-x" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4.2667" d="M29.511 2.133l-27.378 27.378M2.133 2.133l27.378 27.378"></path>
+</symbol>
   </defs>
 </svg>
