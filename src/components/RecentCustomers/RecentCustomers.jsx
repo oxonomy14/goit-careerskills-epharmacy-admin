@@ -1,7 +1,7 @@
 import css from './RecentCustomers.module.css';
 
 const RecentCustomers = ({ lastCustomers, customers }) => {
-  const customersById = customers.reduce((acc, customer) => {
+  const customersById = (customers ?? []).reduce((acc, customer) => {
     acc[customer._id] = customer;
     return acc;
   }, {});
@@ -25,7 +25,7 @@ const RecentCustomers = ({ lastCustomers, customers }) => {
               <tr key={item._id}>
                 <td className={css.tdName}>
                   <img
-                    src={customer?.image || customer?.photo || ''}
+                    src={customer?.image || customer?.photo || null}
                     alt={customer?.name}
                     className={css.imgAvatar}
                   />

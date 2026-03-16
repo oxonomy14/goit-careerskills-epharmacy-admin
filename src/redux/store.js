@@ -32,6 +32,7 @@ const persistConfigCustomers = {
   key: 'customers',
   version: 1,
   storage,
+  whitelist: ['customers'],
 };
 
 const persistedAuthReducer = persistReducer(persistConfigAuth, authReducer);

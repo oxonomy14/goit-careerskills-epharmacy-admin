@@ -1,3 +1,26 @@
-.container {
+@media only screen and (min-width: 375px) {
+}
 
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1440px) {
+  .pagination {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--background);
+    border: none;
+    cursor: pointer;
+  }
+
+  .active {
+    background-color: var(--accent);
+  }
 }

@@ -13,8 +13,6 @@ const PrivateRoute = ({ children }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const isRefreshing = useSelector(selectIsRefreshing);
 
-  console.log('PrivateRoute:', isLoggedIn);
-
   if (isRefreshing) {
     return <Loader />;
   }

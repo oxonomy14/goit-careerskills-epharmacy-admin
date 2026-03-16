@@ -36,7 +36,14 @@ const CustomersData = ({ customers }) => {
                 <p>{customer.phone}</p>
               </td>
               <td>
-                <p>{customer.register_date}</p>
+                <p>
+                  {' '}
+                  {customer.register_date
+                    ? new Date(customer.register_date).toLocaleDateString(
+                        'uk-UA',
+                      )
+                    : ''}
+                </p>
               </td>
             </tr>
           ))}

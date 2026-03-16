@@ -21,8 +21,6 @@ const Header = () => {
 
   const currentTitle = pageTitles[location.pathname] || 'Undefind';
 
-  console.log('user:', user);
-
   return (
     <>
       <div className={css.container}>
