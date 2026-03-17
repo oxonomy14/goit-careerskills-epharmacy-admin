@@ -23,6 +23,7 @@ const DashboardPage = lazy(
 const CustomersDataPage = lazy(
   () => import('./pages/CustomersDataPage/CustomersDataPage'),
 );
+const AllOrdersPage = lazy(() => import('./pages/AllOrdersPage/AllOrdersPage'));
 
 function App() {
   const dispatch = useDispatch();
@@ -33,12 +34,6 @@ function App() {
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-
-  /*  useEffect(() => {
-    if (token) {
-      dispatch(refreshUser());
-    }
-  }, [dispatch, token]); */
 
   if (isRefreshing) {
     return <Loader />;
@@ -67,6 +62,7 @@ function App() {
         >
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/customers" element={<CustomersDataPage />} />
+          <Route path="/orders" element={<AllOrdersPage />} />
           <Route path="*" element={<h1>404</h1>} />
         </Route>
 

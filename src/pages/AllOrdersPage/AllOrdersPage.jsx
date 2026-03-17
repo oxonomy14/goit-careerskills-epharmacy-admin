@@ -1,28 +1,29 @@
-import css from './CustomersDataPage.module.css';
+import css from './AllOrdersPage.module.css';
 import UserNameFilter from '../../components/UserNameFilter/UserNameFilter';
-import CustomersData from '../../components/CustomersData/CustomersData';
+import AllOrders from '../../components/AllOrders/AllOrders';
 import Pagination from '../../components/Pagination/Pagination';
 import Loader from '../../components/Loader/Loader';
-import { getCustomers } from '../../redux/customers/customersOperations';
+import { getOrders } from '../../redux/orders/ordersOperations';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {
-  selectCustomers,
+  selectOrders,
   selectPage,
   selectTotalPages,
-  selectCustomersLoading,
   selectFilter,
-} from '../../redux/customers/customersSelector';
-import { setFilter, setPage } from '../../redux/customers/customersSlice';
+  selectOrdersLoading,
+} from '../../redux/orders/ordersSelector';
 
-const CustomersDataPage = () => {
+import { setFilter, setPage } from '../../redux/orders/ordersSlice';
+
+const AllOrdersPage = () => {
   const dispatch = useDispatch();
-  const customers = useSelector(selectCustomers);
+  const orders = useSelector(selectOrders);
   const currentPage = useSelector(selectPage);
   const totalPages = useSelector(selectTotalPages);
   const filter = useSelector(selectFilter);
-  const isLoading = useSelector(selectCustomersLoading);
+  const isLoading = useSelector(selectOrdersLoading);
 
   const handlePageChange = page => {
     dispatch(setPage(page));
@@ -39,18 +40,18 @@ const CustomersDataPage = () => {
   };
 
   useEffect(() => {
-    dispatch(getCustomers({ page: currentPage, name: filter }));
+    dispatch(getOrders({ page: currentPage, name: filter }));
   }, [dispatch, currentPage, filter]);
 
   return (
     <>
-      {isLoading && (!customers || customers.length === 0) && <Loader />}
+      {isLoading && (!orders || orders.length === 0) && <Loader />}
       <div className={css.wrapper}>
         <div className={css.userNameFilter}>
           <UserNameFilter onFilter={handleFilter} onClear={handleClear} />
         </div>
         <div className={css.customersData}>
-          <CustomersData customers={customers} />
+          <AllOrders orders={orders} />
         </div>
         <div className={css.pagination}>
           <Pagination
@@ -65,4 +66,4 @@ const CustomersDataPage = () => {
   );
 };
 
-export default CustomersDataPage;
+export default AllOrdersPage;

@@ -1,15 +1,6 @@
-import { useSelector } from 'react-redux';
 import css from './Pagination.module.css';
 
-import {
-  selectPage,
-  selectTotalPages,
-} from '../../redux/customers/customersSelector';
-
-const Pagination = ({ onPageChange }) => {
-  const currentPage = useSelector(selectPage);
-  const totalPages = useSelector(selectTotalPages);
-
+const Pagination = ({ currentPage, totalPages, onPageChange, disabled }) => {
   if (totalPages <= 1) return null;
 
   const pages = [];
@@ -25,6 +16,7 @@ const Pagination = ({ onPageChange }) => {
           key={page}
           className={`${css.dot} ${page === currentPage ? css.active : ''}`}
           onClick={() => onPageChange(page)}
+          disabled={disabled}
         />
       ))}
     </div>

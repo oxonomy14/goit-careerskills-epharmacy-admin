@@ -7,12 +7,11 @@
   --background: #e7f1ed;
   --background-2: #f7f8fa;
   --background-3: #fff;
-
   --white-color: #fff;
-
   --icon-color-white: #fff;
   --icon-color-orange: #f6b83d;
   --icon-color-black: #262626;
+  --loader: #59b17a;
 }
 
 html,

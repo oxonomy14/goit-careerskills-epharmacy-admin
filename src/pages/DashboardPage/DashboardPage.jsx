@@ -1,6 +1,7 @@
 import Statistics from '../../components/Statistics/Statistics';
 import RecentCustomers from '../../components/RecentCustomers/RecentCustomers';
 import IncomeExpenses from '../../components/IncomeExpenses/IncomeExpenses';
+import Loader from '../../components/Loader/Loader';
 import css from './DashboardPage.module.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -11,6 +12,7 @@ import {
   selectStatistics,
   selectLastCustomers,
   selectTransactions,
+  selectDashboardLoading,
 } from '../../redux/dashboard/dashboardSelector';
 import { selectCustomers } from '../../redux/customers/customersSelector';
 
@@ -20,6 +22,7 @@ const DashboardPage = () => {
   const lastCustomers = useSelector(selectLastCustomers);
   const transactions = useSelector(selectTransactions);
   const customers = useSelector(selectCustomers);
+  const isLoading = useSelector(selectDashboardLoading);
 
   useEffect(() => {
     dispatch(getDashboard());
@@ -28,6 +31,7 @@ const DashboardPage = () => {
 
   return (
     <>
+      {isLoading && <Loader />}
       <div className={css.wrapper}>
         <div className={css.statWrapper}>
           <Statistics statistics={statistics} />

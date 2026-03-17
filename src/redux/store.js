@@ -3,6 +3,7 @@ import storage from 'redux-persist/es/storage';
 import { authReducer } from './auth/authSlice';
 import { dashboardReducer } from './dashboard/dashboardSlice';
 import { customersReducer } from './customers/customersSlice';
+import { ordersReducer } from './orders/ordersSlice';
 
 import {
   persistStore,
@@ -35,6 +36,13 @@ const persistConfigCustomers = {
   whitelist: ['customers'],
 };
 
+const persistConfigOrders = {
+  key: 'orders',
+  version: 1,
+  storage,
+  whitelist: ['orders'],
+};
+
 const persistedAuthReducer = persistReducer(persistConfigAuth, authReducer);
 const persistedDashboardReducer = persistReducer(
   persistConfigDashboard,
@@ -46,11 +54,17 @@ const persistedCustomersReducer = persistReducer(
   customersReducer,
 );
 
+const persistedOrdersReducer = persistReducer(
+  persistConfigOrders,
+  ordersReducer,
+);
+
 export const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
     dashboard: persistedDashboardReducer,
     customers: persistedCustomersReducer,
+    orders: persistedOrdersReducer,
   },
 
   middleware: getDefaultMiddleware =>

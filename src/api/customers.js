@@ -1,19 +1,4 @@
-import { api } from './api'; // твій axios instance
-
-/* export const fetchCustomers = async (page = 1, perPage = 8) => {
-  const { data } = await api.get('/customers', {
-    params: {
-      page,
-      perPage,
-    },
-  });
-  return data.data;
-}; */
-
-/* export const fetchCustomers = async ({ page = 1, name = '' }) => {
-  const { data } = await api.get(`/customers?name=${name}&page=${page}`);
-  return data.data;
-}; */
+import { api } from './api';
 
 export const fetchCustomers = async ({ page = 1, name = '' }) => {
   const { data } = await api.get('/customers', {
