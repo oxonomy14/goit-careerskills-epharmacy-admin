@@ -4,7 +4,7 @@ const AllOrders = ({ orders }) => {
   return (
     <>
       <table className={css.tableCustomers}>
-        <caption>Recent Customers</caption>
+        <caption>All orders</caption>
         <thead>
           <tr>
             <th scope="col">User info</th>

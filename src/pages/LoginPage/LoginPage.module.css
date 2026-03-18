@@ -1,15 +1,124 @@
 .sectionLoginPage {
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionLoginPage {
+  padding-top: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 234px;
+}
+
+.logo {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 148px;
+}
+
+.logoImage {
+  width: 44px;
+  height: 44px;
+}
+.logoTitle {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  color: var(--main-black);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.textWrapper {
+  max-width: 335px;
+  width: 100%;
   position: relative;
 }
 
+.imagePill {
+  position: absolute;
+  right: 0px;
+  transform: translateY(-5%);
+  width: 84px;
+  height: 82px;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 121%;
+  color: var(--main-black);
+}
+
+.text span {
+  color: var(--accent);
+}
+
+.decorateWrapper {
+  position: fixed;
+  right: -185px;
+
+  bottom: -88px;
+}
+
+.decorateIcon {
+  width: 464px;
+  height: 345px;
+  fill: rgba(89, 177, 122, 0.08);
+}
+
 @media only screen and (min-width: 375px) {
+  .sectionLoginPage {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .imagePill {
+    right: 20px;
+    transform: translateY(-55%);
+    width: 95px;
+    height: 93px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  .sectionLoginPage {
+    padding-top: 24px;
+    padding-left: 32px;
+    padding-right: 141px;
+    padding-bottom: 276px;
+  }
+
+  .logo {
+    margin-bottom: 204px;
+  }
+
+  .container {
+    gap: 50px;
+  }
+  .textWrapper {
+    max-width: 614px;
+    width: 614px;
+  }
+  .imagePill {
+    right: 0;
+    transform: translateY(-57%);
+    width: 179px;
+    height: 175px;
+  }
+  .text {
+    font-size: 54px;
+    line-height: 111%;
+  }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1440px) {
   .sectionLoginPage {
     padding-top: 28px;
     padding-left: 100px;
@@ -18,63 +127,12 @@
   }
 
   .logo {
-    display: flex;
     gap: 10px;
-    align-items: center;
+    margin-bottom: 226px;
   }
 
-  .logoImage {
-    width: 44px;
-    height: 44px;
-  }
-
-  .logoTitle {
-    font-weight: 600;
-    font-size: 20px;
-    letter-spacing: -0.03em;
-    color: var(--main-black);
-  }
-
-  .Container {
-    padding-top: 226px;
-    display: flex;
+  .container {
+    flex-direction: row;
     gap: 150px;
-  }
-
-  .textWrapper {
-    width: 614px;
-    height: 240px;
-    position: relative;
-  }
-  .imagePill {
-    position: absolute;
-    right: 0;
-    transform: translateY(-57%);
-    width: 179px;
-    height: 175px;
-  }
-
-  .text {
-    font-weight: 600;
-    font-size: 54px;
-    line-height: 111%;
-    color: var(--main-black);
-  }
-
-  .text span {
-    color: var(--accent);
-  }
-
-  .decorateWrapper {
-    position: absolute;
-    right: -185px;
-
-    bottom: -88px;
-  }
-
-  .decorateIcon {
-    width: 464px;
-    height: 345px;
-    fill: rgba(89, 177, 122, 0.08);
   }
 }

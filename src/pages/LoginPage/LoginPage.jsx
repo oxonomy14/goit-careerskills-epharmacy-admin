@@ -14,7 +14,7 @@ const LoginPage = () => {
           />
           <p className={css.logoTitle}>E-Pharmacy</p>
         </div>
-        <div className={css.Container}>
+        <div className={css.container}>
           <div className={css.textWrapper}>
             <img
               className={css.imagePill}
@@ -23,7 +23,7 @@ const LoginPage = () => {
             />
             <p className={css.text}>
               Your medication, delivered Say goodbye to all
-              <span>your healthcare</span> worries with us
+              <span> your healthcare</span> worries with us
             </p>
           </div>
           <div className={css.loginForm}>

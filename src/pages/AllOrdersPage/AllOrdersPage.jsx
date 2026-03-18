@@ -50,7 +50,7 @@ const AllOrdersPage = () => {
         <div className={css.userNameFilter}>
           <UserNameFilter onFilter={handleFilter} onClear={handleClear} />
         </div>
-        <div className={css.customersData}>
+        <div className={css.ordersData}>
           <AllOrders orders={orders} />
         </div>
         <div className={css.pagination}>
