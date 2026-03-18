@@ -1,3 +1,10 @@
+.text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: rgba(29, 30, 33, 0.4);
+}
+
 @media only screen and (min-width: 375px) {
 }
 
@@ -5,10 +12,4 @@
 }
 
 @media only screen and (min-width: 1280px) {
-  .text {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 150%;
-    color: rgba(29, 30, 33, 0.4);
-  }
 }

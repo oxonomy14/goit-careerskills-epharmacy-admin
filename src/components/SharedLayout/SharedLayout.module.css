@@ -1,20 +1,31 @@
-.layout {
+.body {
+  display: flex;
+}
+
+.sidebar {
+  display: none;
 }
 
 @media only screen and (min-width: 375px) {
+  .main {
+    padding: 0px 20px 72px;
+    flex: 1;
+    overflow-y: auto;
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  .main {
+    padding: 0px 32px 40px;
+  }
 }
 
-@media only screen and (min-width: 1280px) {
-  .body {
-    display: flex;
+@media only screen and (min-width: 1440px) {
+  .sidebar {
+    display: block;
   }
 
   .main {
     padding: 0px 40px 40px;
-    flex: 1;
-    overflow-y: auto;
   }
 }

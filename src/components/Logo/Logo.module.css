@@ -1,13 +1,23 @@
+.logoImg {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 375px) {
+  .logoImg {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-}
-
-@media only screen and (min-width: 1440px) {
   .logoImg {
     width: 40px;
     height: 40px;
-    cursor: pointer;
   }
+}
+
+@media only screen and (min-width: 1440px) {
 }

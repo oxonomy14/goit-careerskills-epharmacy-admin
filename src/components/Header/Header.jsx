@@ -24,7 +24,14 @@ const Header = () => {
   return (
     <>
       <div className={css.container}>
-        <Logo />
+        <button type="button" className={css.burgerBtn}>
+          <svg className={css.burgerIcon}>
+            <use href={`/icons/sprite.svg?v=${Date.now()}#icon-burger`} />
+          </svg>
+        </button>
+        <div className={css.logo}>
+          <Logo />
+        </div>
         <div className={css.titleWrapper}>
           <Title>Medicine store</Title>
 
@@ -37,7 +44,9 @@ const Header = () => {
             <SubTitle>{user.email}</SubTitle>
           </div>
         </div>
-        <LogOutBtn />
+        <div className={css.logoutBtn}>
+          <LogOutBtn />
+        </div>
       </div>
     </>
   );
