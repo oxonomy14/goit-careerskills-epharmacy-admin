@@ -6,11 +6,15 @@
   display: none;
 }
 
+.main {
+  padding: 0px 10px 72px;
+  flex: 1;
+  overflow-y: auto;
+}
+
 @media only screen and (min-width: 375px) {
   .main {
     padding: 0px 20px 72px;
-    flex: 1;
-    overflow-y: auto;
   }
 }
 

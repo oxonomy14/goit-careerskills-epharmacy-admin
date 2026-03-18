@@ -1,47 +1,68 @@
+.statWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.statBox {
+  border: 1px solid rgba(29, 30, 33, 0.1);
+  border-radius: 8px;
+  padding: 14px 18px;
+  width: 144px;
+
+  background-color: var(--background-3);
+}
+.statBox:hover,
+.statBox:focus {
+  border: 1px solid var(--accent);
+}
+
+.meta {
+  margin-bottom: 32px;
+  display: flex;
+  gap: 8px;
+  align-items: start;
+}
+.title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 117%;
+  color: rgba(29, 30, 33, 0.4);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  stroke: var(--main-black);
+  fill: none;
+}
 @media only screen and (min-width: 375px) {
-}
-
-@media only screen and (min-width: 768px) {
-}
-
-@media only screen and (min-width: 1440px) {
   .statWrapper {
-    display: flex;
     gap: 20px;
   }
 
   .statBox {
-    border: 1px solid rgba(29, 30, 33, 0.1);
-    border-radius: 8px;
-    padding: 14px 18px;
-    width: 240px;
+    width: 157px;
+    height: 98px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .statBox {
+    width: 221px;
     height: 108px;
-    background-color: var(--background-3);
   }
-
-  .statBox:hover,
-  .statBox:focus {
-    border: 1px solid var(--accent);
-  }
-
-  .meta {
-    margin-bottom: 33px;
-    display: flex;
-    gap: 8px;
-    align-items: start;
-  }
-
   .title {
-    font-weight: 400;
-    font-size: 12px;
     line-height: 150%;
-    color: rgba(29, 30, 33, 0.4);
   }
-
   .icon {
     width: 20px;
     height: 20px;
-    stroke: var(--main-black);
-    fill: none;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .statBox {
+    width: 240px;
   }
 }

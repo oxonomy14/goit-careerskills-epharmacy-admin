@@ -1,8 +1,8 @@
 .container {
   padding-top: 17px;
   padding-bottom: 17px;
-  padding-left: 20px;
-  padding-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
   height: 80px;
   display: flex;
 
@@ -22,11 +22,11 @@
 }
 
 .logo {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .titleWrapper {
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: auto;
   display: flex;
   flex-direction: column;
@@ -49,6 +49,17 @@
   display: none;
 }
 @media only screen and (min-width: 375px) {
+  .container {
+    padding-left: 20px;
+  }
+
+  .logo {
+    margin-left: 20px;
+  }
+
+  .titleWrapper {
+    margin-left: 20px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
