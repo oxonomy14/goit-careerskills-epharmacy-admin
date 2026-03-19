@@ -1,19 +1,26 @@
+.wrapper {
+  padding-top: 40px;
+}
+
+.userNameFilter {
+  margin-bottom: 20px;
+}
+
+.ordersData {
+  margin-bottom: 20px;
+}
+
 @media only screen and (min-width: 375px) {
 }
 
 @media only screen and (min-width: 768px) {
+  .wrapper {
+    padding-top: 50px;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
   .wrapper {
     padding-top: 75px;
-  }
-
-  .userNameFilter {
-    margin-bottom: 20px;
-  }
-
-  .odersData {
-    margin-bottom: 20px;
   }
 }

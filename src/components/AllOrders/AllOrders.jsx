@@ -35,7 +35,6 @@ const AllOrders = ({ orders }) => {
               </td>
               <td>
                 <p>
-                  {' '}
                   {order.order_date
                     ? new Date(order.order_date).toLocaleDateString('uk-UA')
                     : ''}
