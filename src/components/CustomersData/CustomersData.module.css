@@ -1,102 +1,174 @@
+.tableCustomers {
+  border-radius: 0 0 8px 8px;
+  width: 100%;
+  background-color: var(--background-3);
+  border-collapse: collapse;
+}
+
+.tableCustomers caption {
+  border: 0px solid rgba(29, 30, 33, 0.08);
+  border-radius: 8px 8px 0 0;
+  background-color: var(--background);
+  padding: 14px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main-black);
+  text-align: left;
+}
+
+.tableCustomers th {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  color: rgba(29, 30, 33, 0.4);
+  padding: 14px;
+  text-align: left;
+  border-right: 1px solid rgba(29, 30, 33, 0.1);
+}
+
+.tableCustomers th:last-child {
+  border-right: none;
+}
+
+.tableCustomers thead tr {
+  position: relative;
+}
+
+.tableCustomers thead tr::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 1px;
+  background: rgba(29, 30, 33, 0.1);
+}
+
+.tableCustomers td {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 117%;
+  color: var(--main-black);
+  padding: 14px;
+  text-align: left;
+
+  border-right: 1px solid rgba(29, 30, 33, 0.1);
+}
+
+.tableCustomers td:last-child {
+  border-right: none;
+}
+
+.tableCustomers tbody tr {
+  position: relative;
+}
+
+.tableCustomers tbody tr:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 1px;
+  background: rgba(29, 30, 33, 0.1);
+}
+
+.tdName {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  white-space: nowrap;
+}
+
+.imgAvatar {
+  border-radius: 30px;
+  width: 24px;
+  height: 24px;
+}
+
 @media only screen and (min-width: 375px) {
 }
 
 @media only screen and (min-width: 768px) {
-}
-
-@media only screen and (min-width: 1440px) {
-  .tableCustomers {
-    /* border: 1px solid rgba(29, 30, 33, 0.1); */
-    border-radius: 0 0 8px 8px;
-    width: 100%;
-    background-color: var(--background-3);
-    border-collapse: collapse;
-  }
-
   .tableCustomers caption {
-    border: 0px solid rgba(29, 30, 33, 0.08);
-    border-radius: 8px 8px 0 0;
-    background-color: var(--background);
     padding: 20px;
-    font-weight: 600;
+
     font-size: 18px;
     line-height: 133%;
-    color: var(--main-black);
-    text-align: left;
   }
 
   .tableCustomers th {
-    font-weight: 500;
     font-size: 14px;
     line-height: 129%;
-    color: rgba(29, 30, 33, 0.4);
+
     padding: 20px;
-    text-align: left;
-    border-right: 1px solid rgba(29, 30, 33, 0.1);
-  }
-
-  .tableCustomers th:last-child {
-    border-right: none;
-  }
-
-  .tableCustomers thead tr {
-    position: relative;
   }
 
   .tableCustomers thead tr::after {
-    content: '';
-    position: absolute;
     left: 20px;
     right: 20px;
-    bottom: 0;
-    height: 1px;
-    background: rgba(29, 30, 33, 0.1);
   }
 
   .tableCustomers td {
-    font-weight: 500;
     font-size: 16px;
     line-height: 113%;
-    color: var(--main-black);
-    padding-top: 29px;
-    padding-bottom: 29px;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: left;
 
-    border-right: 1px solid rgba(29, 30, 33, 0.1);
-  }
-
-  .tableCustomers td:last-child {
-    border-right: none;
-  }
-
-  .tableCustomers tbody tr {
-    position: relative;
+    padding: 20px;
   }
 
   .tableCustomers tbody tr:not(:last-child)::after {
-    content: '';
-    position: absolute;
     left: 20px;
     right: 20px;
-    bottom: 0;
-    height: 1px;
-    background: rgba(29, 30, 33, 0.1);
   }
 
   .tdName {
-    display: flex;
-    gap: 8px;
+    min-width: 250px;
+    width: 100%;
+    flex-direction: row;
     align-items: center;
   }
 
-  .name {
-    white-space: nowrap;
+  .imgAvatar {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .tableCustomers caption {
+    padding: 20px;
+
+    font-size: 18px;
+    line-height: 133%;
+  }
+
+  .tableCustomers th {
+    font-size: 14px;
+    line-height: 129%;
+
+    padding: 20px;
+  }
+
+  .tableCustomers thead tr::after {
+    left: 20px;
+    right: 20px;
+  }
+
+  .tableCustomers td {
+    font-size: 16px;
+    line-height: 113%;
+  }
+
+  .tableCustomers tbody tr:not(:last-child)::after {
+    left: 20px;
+    right: 20px;
   }
 
   .imgAvatar {
-    border-radius: 30px;
     width: 36px;
     height: 36px;
   }
