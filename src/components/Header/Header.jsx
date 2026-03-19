@@ -7,7 +7,7 @@ import LogOutBtn from '../LogOutBtn/LogOutBtn';
 import { selectUser } from '../../redux/auth/authSelector.js';
 import { useSelector } from 'react-redux';
 
-const Header = () => {
+const Header = ({ openMenu }) => {
   const location = useLocation();
   const path = location.pathname;
   const user = useSelector(selectUser);
@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <>
       <div className={css.container}>
-        <button type="button" className={css.burgerBtn}>
+        <button type="button" className={css.burgerBtn} onClick={openMenu}>
           <svg className={css.burgerIcon}>
             <use href={`/icons/sprite.svg?v=${Date.now()}#icon-burger`} />
           </svg>

@@ -4,12 +4,12 @@ import Container from '../../components/Container/Container';
 import Header from '../Header/Header';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
-const SharedLayout = () => {
+const SharedLayout = ({ openMenu }) => {
   return (
     <Container>
       <div className={css.layout}>
         <header className={css.header}>
-          <Header />
+          <Header openMenu={openMenu} />
         </header>
 
         <div className={css.body}>

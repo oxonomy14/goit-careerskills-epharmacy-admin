@@ -1,7 +1,9 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
-/* import { useState } from 'react'; */
+import { useMediaQuery } from 'react-responsive';
+import ModalMenu from './components/ModalMenu/ModalMenu.jsx';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import PublicRoute from './components/PublicRoute/PublicRoute.jsx';
@@ -30,6 +32,12 @@ function App() {
   const token = useSelector(selectToken);
   const isRefreshing = useSelector(selectIsRefreshing);
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isDesktop = useMediaQuery({ minWidth: 1440 });
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const openMenu = () => setIsMenuOpen(true);
+  const closeMenu = () => setIsMenuOpen(false);
 
   useEffect(() => {
     dispatch(refreshUser());
@@ -39,36 +47,39 @@ function App() {
     return <Loader />;
   }
 
-  console.log('App-isLoggedIn:', isLoggedIn);
-
   return (
-    <Suspense fallback={<Loader />}>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <PublicRoute>
-              <LoginPage />
-            </PublicRoute>
-          }
-        />
+    <>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PublicRoute>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
 
-        <Route
-          element={
-            <PrivateRoute>
-              <SharedLayout />
-            </PrivateRoute>
-          }
-        >
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/customers" element={<CustomersDataPage />} />
-          <Route path="/orders" element={<AllOrdersPage />} />
+          <Route
+            element={
+              <PrivateRoute>
+                <SharedLayout openMenu={openMenu} />
+              </PrivateRoute>
+            }
+          >
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/customers" element={<CustomersDataPage />} />
+            <Route path="/orders" element={<AllOrdersPage />} />
+            <Route path="*" element={<h1>404</h1>} />
+          </Route>
+
           <Route path="*" element={<h1>404</h1>} />
-        </Route>
-
-        <Route path="*" element={<h1>404</h1>} />
-      </Routes>
-    </Suspense>
+        </Routes>
+      </Suspense>
+      {!isDesktop && (
+        <ModalMenu isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
+      )}
+    </>
   );
 }
 
