@@ -32,7 +32,10 @@ const RecentCustomers = ({ lastCustomers, customers }) => {
                   <p className={css.name}>{item.name}</p>
                 </td>
                 <td>
-                  <p>{item.email}</p>
+                  <div className={css.tooltipWrapper}>
+                    <p className={css.email}>{item.email}</p>
+                    <span className={css.tooltipText}>{item.email}</span>
+                  </div>
                 </td>
                 <td>
                   <p>{item.spent}</p>

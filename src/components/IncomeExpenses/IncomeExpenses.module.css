@@ -1,142 +1,211 @@
+.tableTransactions {
+  border-radius: 0 0 8px 8px;
+  width: 100%;
+  background-color: var(--background-3);
+  border-collapse: collapse;
+}
+
+.tableTransactions caption {
+  border: 0px solid rgba(29, 30, 33, 0.08);
+  border-radius: 8px 8px 0 0;
+  background-color: var(--background);
+  padding: 14px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main-black);
+  text-align: left;
+}
+
+.tableTransactions th {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: rgba(29, 30, 33, 0.4);
+  padding: 14px;
+  text-align: left;
+  border-right: 1px solid rgba(29, 30, 33, 0.1);
+}
+
+.tableTransactions th:last-child {
+  border-right: none;
+}
+
+.tableTransactions thead tr {
+  position: relative;
+}
+
+.tableTransactions thead tr::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 1px;
+  background: rgba(29, 30, 33, 0.1);
+}
+
+.tableTransactions td {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: var(--main-black);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 14px;
+  padding-right: 14px;
+  text-align: left;
+}
+
+.tableTransactions tbody tr {
+  position: relative;
+}
+
+.tableTransactions tbody tr:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 1px;
+  background: rgba(29, 30, 33, 0.1);
+}
+
+.expense {
+  border-radius: 40px;
+  padding: 4px 17px;
+  width: 80px;
+  height: 25px;
+  background-color: rgba(232, 80, 80, 0.1);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.05em;
+  text-align: center;
+  color: var(--accent-2);
+}
+
+.expenseAmount {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: var(--accent-2);
+}
+
+.income {
+  border-radius: 40px;
+  padding: 4px 17px;
+  width: 80px;
+  height: 25px;
+  background-color: rgba(89, 177, 122, 0.1);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.05em;
+  text-align: center;
+  color: var(--accent);
+}
+
+.incomeAmount {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: var(--accent);
+}
+
+.error {
+  border-radius: 40px;
+  padding: 4px 17px;
+  width: 80px;
+  height: 25px;
+  background-color: rgba(29, 30, 33, 0.1);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.05em;
+  text-align: center;
+  color: var(--main-black);
+}
+
+.errorAmount {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  text-decoration: line-through;
+  color: var(--main-black);
+}
+
 @media only screen and (min-width: 375px) {
 }
 
 @media only screen and (min-width: 768px) {
-}
-
-@media only screen and (min-width: 1440px) {
-  .tableTransactions {
-    /* border: 1px solid rgba(29, 30, 33, 0.1); */
-    border-radius: 0 0 8px 8px;
-    width: 100%;
-    background-color: var(--background-3);
-    border-collapse: collapse;
-  }
-
   .tableTransactions caption {
-    border: 0px solid rgba(29, 30, 33, 0.08);
-    border-radius: 8px 8px 0 0;
-    background-color: var(--background);
     padding: 20px;
-    font-weight: 600;
+
     font-size: 18px;
     line-height: 133%;
-    color: var(--main-black);
-    text-align: left;
   }
 
   .tableTransactions th {
-    font-weight: 500;
     font-size: 14px;
     line-height: 129%;
-    color: rgba(29, 30, 33, 0.4);
+
     padding: 20px;
-    text-align: left;
-    border-right: 1px solid rgba(29, 30, 33, 0.1);
-  }
-
-  .tableTransactions th:last-child {
-    border-right: none;
-  }
-
-  .tableTransactions thead tr {
-    position: relative;
   }
 
   .tableTransactions thead tr::after {
-    content: '';
-    position: absolute;
     left: 20px;
     right: 20px;
-    bottom: 0;
-    height: 1px;
-    background: rgba(29, 30, 33, 0.1);
   }
 
   .tableTransactions td {
-    font-weight: 500;
     font-size: 16px;
     line-height: 113%;
-    color: var(--main-black);
+
     padding-top: 29px;
     padding-bottom: 29px;
     padding-left: 20px;
     padding-right: 20px;
-    text-align: left;
-  }
-
-  .tableTransactions tbody tr {
-    position: relative;
   }
 
   .tableTransactions tbody tr:not(:last-child)::after {
-    content: '';
-    position: absolute;
     left: 20px;
     right: 20px;
-    bottom: 0;
-    height: 1px;
-    background: rgba(29, 30, 33, 0.1);
   }
 
   .expense {
-    border-radius: 40px;
     padding: 4px;
-    width: 80px;
-    height: 25px;
-    background-color: rgba(232, 80, 80, 0.1);
-    font-weight: 500;
+
     font-size: 14px;
     letter-spacing: -0.05em;
-    text-align: center;
-    color: var(--accent-2);
   }
 
   .expenseAmount {
-    font-weight: 500;
     font-size: 16px;
     line-height: 113%;
-    color: var(--accent-2);
   }
 
   .income {
-    border-radius: 40px;
     padding: 4px;
-    width: 80px;
-    height: 25px;
-    background-color: rgba(89, 177, 122, 0.1);
-    font-weight: 500;
+
     font-size: 14px;
     letter-spacing: -0.05em;
-    text-align: center;
-    color: var(--accent);
   }
 
   .incomeAmount {
-    font-weight: 500;
     font-size: 16px;
     line-height: 113%;
-    color: var(--accent);
   }
 
   .error {
-    border-radius: 40px;
     padding: 4px;
-    width: 80px;
-    height: 25px;
-    background-color: rgba(29, 30, 33, 0.1);
-    font-weight: 500;
+
     font-size: 14px;
     letter-spacing: -0.05em;
-    text-align: center;
-    color: var(--main-black);
   }
 
   .errorAmount {
-    font-weight: 500;
     font-size: 16px;
     line-height: 113%;
-    text-decoration: line-through;
-    color: var(--main-black);
   }
+}
+
+@media only screen and (min-width: 1440px) {
 }
